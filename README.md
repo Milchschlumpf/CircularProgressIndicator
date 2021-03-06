@@ -110,6 +110,7 @@ circularProgress.getMaxProgress() // returns 10000
 |  Formatting pattern to be used in `PatternProgressTextAdapter`. Checkout [Formatting progress text](#formatting-progress-text) section.             | `app:formattingPattern`              | setter: `setProgressTextAdapter(progressTextAdapter)`<br/>getter: `getProgressTextAdapter()`                                                                                             | not specified                 |
 |  Direction of the progress arc (`clockwise` or `counterclockwise`)                                                                                  | `app:direction`                      | setter: `setDirection(direction)`<br/>getter: `getDirection()`                                                                                                                           | `counterclockwise`            |
 |  Start angle. Checkout [Start angle](#setting-start-angle) section.                                                                                 | `app:startAngle`                     | setter: `setStartAngle(startAngle)`<br/>getter: `getStartAngle()`                                                                                                                        | `270`                         |
+|  End angle. Checkout [End angle](#setting-end-angle) section.                                                                                       | `app:endAngle`                       | setter: `setEndAngle(endAngle)`<br/>getter: `getEndAngle()`                                                                                                                              | same as start angle           |
 |  Progress cap                                                                                                                                       | `app:progressCap`                    | setter: `setProgressStrokeCap(cap)`<br/>getter: `getProgressStrokeCap()`                                                                                                                 | `CAP_ROUND`                   |
 |  Progress animation                                                                                                                                 | `app:enableProgressAnimation`        | setter: `setAnimationEnabled(enableAnimation)`<br/>getter: `isAnimationEnabled()`                                                                                                        | `true`                        |
 |  Whether to fill background with progress background color                                                                                          | `app:fillBackground`                 | setter: `setFillBackgroundEnabled(enable)`<br/>getter: `isFillBackgroundEnabled()`                                                                                                       | `false`                       |
@@ -182,8 +183,10 @@ If you don't want any text to be displayed - just create your own `ProgressTextA
 
 ---
 
-#### Setting start angle
+#### Setting start / end angle
 You can specify start angle for the progress arc using `app:startAngle` attribute or `setStartAngle(startAngle)` method.
+You can optional specify end angle for the progress arc using `app:endAngle` attribute or `setEndAngle(endAngle)` method.
+Default end angle will be the same as start angle, so it draws a full circle.
 Acceptable values are from 0 to 360 degrees. But be aware that they go clockwise, so:
  - 0&deg; is at 3 o'clock as usual
  - 90&deg; is at 6 o'clock

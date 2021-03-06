@@ -2,7 +2,6 @@ package felixpinkerneil.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +13,8 @@ import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Switch;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,11 +53,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final SeekBar progressBackgroundStrokeWidth = findViewById(R.id.sb_progress_background_width);
         SeekBar textSize = findViewById(R.id.sb_text_size);
         dotWidth = findViewById(R.id.sb_dot_width);
+        SeekBar startAngle = findViewById(R.id.sb_start_angle);
+        SeekBar endAngle = findViewById(R.id.sb_end_angle);
 
         progress.setOnSeekBarChangeListener(this);
         progressStrokeWidth.setOnSeekBarChangeListener(this);
         progressBackgroundStrokeWidth.setOnSeekBarChangeListener(this);
         textSize.setOnSeekBarChangeListener(this);
+        startAngle.setOnSeekBarChangeListener(this);
+        endAngle.setOnSeekBarChangeListener(this);
         dotWidth.setOnSeekBarChangeListener(this);
 
         CheckBox drawDot = findViewById(R.id.cb_draw_dot);
@@ -198,6 +203,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sb_progress_background_width:
                 circularProgress.setProgressBackgroundStrokeWidthDp(progress);
+                break;
+            case R.id.sb_start_angle:
+                circularProgress.setStartAngle(progress);
+                break;
+            case R.id.sb_end_angle:
+                circularProgress.setEndAngle(progress);
                 break;
         }
     }

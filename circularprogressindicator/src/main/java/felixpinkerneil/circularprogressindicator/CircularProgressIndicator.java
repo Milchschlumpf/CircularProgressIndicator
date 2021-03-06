@@ -53,7 +53,6 @@ public class CircularProgressIndicator extends View {
     public static final int SWEEP_GRADIENT = 3;
 
     private static final int DEFAULT_PROGRESS_START_ANGLE = 270;
-    private static final int ANGLE_START_PROGRESS_BACKGROUND = 0;
     private static final int ANGLE_END_PROGRESS_BACKGROUND = 360;
 
     private static final int DESIRED_WIDTH_DP = 150;
@@ -74,6 +73,8 @@ public class CircularProgressIndicator extends View {
     private Paint textPaint;
 
     private int startAngle = DEFAULT_PROGRESS_START_ANGLE;
+    private int endAngle = DEFAULT_PROGRESS_START_ANGLE;
+    private int maxAngle = 0;
     private int sweepAngle = 0;
 
     private RectF circleBounds;
@@ -156,6 +157,13 @@ public class CircularProgressIndicator extends View {
                 startAngle = DEFAULT_PROGRESS_START_ANGLE;
             }
 
+            endAngle = a.getInt(R.styleable.CircularProgressIndicator_endAngle, startAngle);
+            if (endAngle < 0 || endAngle > 360) {
+                endAngle = startAngle;
+            }
+
+            calculateMaxAngle();
+
             isAnimationEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_enableProgressAnimation, true);
             isFillBackgroundEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_fillBackground, false);
 
@@ -220,6 +228,10 @@ public class CircularProgressIndicator extends View {
         textPaint.setTextSize(textSize);
 
         circleBounds = new RectF();
+    }
+
+    private void calculateMaxAngle() {
+        maxAngle = startAngle == endAngle ? ANGLE_END_PROGRESS_BACKGROUND : endAngle - startAngle;
     }
 
     @Override
@@ -329,7 +341,7 @@ public class CircularProgressIndicator extends View {
     }
 
     private void drawProgressBackground(Canvas canvas) {
-        canvas.drawArc(circleBounds, ANGLE_START_PROGRESS_BACKGROUND, ANGLE_END_PROGRESS_BACKGROUND,
+        canvas.drawArc(circleBounds, startAngle, maxAngle,
                 false, progressBackgroundPaint);
     }
 
@@ -371,9 +383,9 @@ public class CircularProgressIndicator extends View {
         final double finalAngle;
 
         if (direction == DIRECTION_COUNTERCLOCKWISE) {
-            finalAngle = -(current / max * 360);
+            finalAngle = -(current / max * maxAngle);
         } else {
-            finalAngle = current / max * 360;
+            finalAngle = current / max * maxAngle;
         }
 
         double oldCurrentProgress = progressValue;
@@ -625,6 +637,12 @@ public class CircularProgressIndicator extends View {
 
     public void setStartAngle(@IntRange(from = 0, to = 360) int startAngle) {
         this.startAngle = startAngle;
+        invalidate();
+    }
+
+    public void setEndAngle(@IntRange(from = 0, to = 360) int endAngle) {
+        this.endAngle = endAngle;
+        calculateMaxAngle();
         invalidate();
     }
 

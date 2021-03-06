@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        app:direction="clockwise" />
+        app:direction="clockwise"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,6 +57,35 @@
                 android:min="8"
                 android:progress="24" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Start Angle" />
+
+            <SeekBar
+                android:id="@+id/sb_start_angle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="360"
+                android:min="0"
+                android:progress="270" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="End Angle" />
+
+            <SeekBar
+                android:id="@+id/sb_end_angle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="360"
+                android:min="0"
+                android:progress="270" />
 
             <TextView
                 android:layout_width="wrap_content"
