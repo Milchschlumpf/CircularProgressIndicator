@@ -2,16 +2,17 @@ package felixpinkerneil.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
 /**
@@ -38,11 +39,9 @@ public class ColorPickerDialogFragment extends BottomSheetDialogFragment {
         green.getProgressDrawable().setColorFilter(Color.rgb(0, green.getProgress(), 0), mode);
         blue.getProgressDrawable().setColorFilter(Color.rgb(0, 0, blue.getProgress()), mode);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            red.getThumb().setColorFilter(Color.rgb(red.getProgress(), 0, 0), mode);
-            green.getThumb().setColorFilter(Color.rgb(0, green.getProgress(), 0), mode);
-            blue.getThumb().setColorFilter(Color.rgb(0, 0, blue.getProgress()), mode);
-        }
+        red.getThumb().setColorFilter(Color.rgb(red.getProgress(), 0, 0), mode);
+        green.getThumb().setColorFilter(Color.rgb(0, green.getProgress(), 0), mode);
+        blue.getThumb().setColorFilter(Color.rgb(0, 0, blue.getProgress()), mode);
 
         final View colorResult = rootView.findViewById(R.id.color_result);
         Button selectColor = rootView.findViewById(R.id.btn_select_color_result);
@@ -59,21 +58,15 @@ public class ColorPickerDialogFragment extends BottomSheetDialogFragment {
                 switch (seekBar.getId()) {
                     case R.id.sb_red:
                         seekBar.getProgressDrawable().setColorFilter(Color.rgb(redProgress, 0, 0), mode);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                            seekBar.getThumb().setColorFilter(Color.rgb(redProgress, 0, 0), mode);
-                        }
+                        seekBar.getThumb().setColorFilter(Color.rgb(redProgress, 0, 0), mode);
                         break;
                     case R.id.sb_green:
                         seekBar.getProgressDrawable().setColorFilter(Color.rgb(0, greenProgress, 0), mode);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                            seekBar.getThumb().setColorFilter(Color.rgb(0, greenProgress, 0), mode);
-                        }
+                        seekBar.getThumb().setColorFilter(Color.rgb(0, greenProgress, 0), mode);
                         break;
                     case R.id.sb_blue:
                         seekBar.getProgressDrawable().setColorFilter(Color.rgb(0, 0, blueProgress), mode);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                            seekBar.getThumb().setColorFilter(Color.rgb(0, 0, blueProgress), mode);
-                        }
+                        seekBar.getThumb().setColorFilter(Color.rgb(0, 0, blueProgress), mode);
                         break;
                 }
             }
