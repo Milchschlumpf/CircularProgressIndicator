@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicatorexample;
+package felixpinkerneil.circularprogressindicatorexample;
 
 import android.widget.SeekBar;
 

@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicator;
+package felixpinkerneil.circularprogressindicator;
 
 import android.animation.Animator;
 import android.animation.PropertyValuesHolder;

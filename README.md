@@ -1,5 +1,7 @@
 # CircularProgressIndicator
 
+Original repository: https://github.com/antonKozyriatskyi/CircularProgressIndicator
+
 Simple but customizable view for displaying progress
 
 <img src="art/1_1.png" width="30%" /> <img src="art/1_2.png" width="30%" /> <img src="art/1_3.png" width="30%" />
@@ -40,7 +42,7 @@ Simple but customizable view for displaying progress
 
 Add view to your layout:
 ```xml
-<antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+<felixpinkerneil.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/circular_progress"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -68,7 +70,7 @@ Add view to your layout:
 
 Since all attributes have default values, you can specify none of them. Thus following code also works:
 ```xml
-<antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+<felixpinkerneil.circularprogressindicator.CircularProgressIndicator
     android:id="@+id/circular_progress"
     android:layout_width="200dp"
     android:layout_height="200dp"
@@ -270,7 +272,7 @@ If you have any troubles downloading the library - checkout [issue#5](https://gi
 ### License
 
 ```
- Copyright 2018 Anton Kozyriatskyi
+ Copyright 2021 Felix Pinkerneil
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

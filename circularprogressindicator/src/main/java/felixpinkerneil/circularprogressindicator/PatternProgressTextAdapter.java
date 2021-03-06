@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicator;
+package felixpinkerneil.circularprogressindicator;
 
 import android.support.annotation.NonNull;
 

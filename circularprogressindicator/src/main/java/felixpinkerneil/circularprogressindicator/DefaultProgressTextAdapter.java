@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicator;
+package felixpinkerneil.circularprogressindicator;
 
 /**
  * Created by Anton on 06.06.2018.

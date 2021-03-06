@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicatorexample;
+package felixpinkerneil.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+
 
 /**
  * Created by Anton on 13.03.2018.

@@ -1,4 +1,4 @@
-package antonkozyriatskyi.circularprogressindicatorexample;
+package felixpinkerneil.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import android.widget.Switch;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
+import felixpinkerneil.circularprogressindicator.CircularProgressIndicator;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,
