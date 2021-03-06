@@ -1,6 +1,6 @@
 # CircularProgressIndicator
 
-Original repository: https://github.com/antonKozyriatskyi/CircularProgressIndicator
+Fork from repository: https://github.com/antonKozyriatskyi/CircularProgressIndicator
 
 Simple but customizable view for displaying progress
 
