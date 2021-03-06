@@ -89,10 +89,9 @@ public class CircularProgressIndicator extends View {
 
     private double maxProgressValue = 100.0;
     private double progressValue = 0.0;
-
     private boolean isAnimationEnabled;
-
     private boolean isFillBackgroundEnabled;
+    private boolean displayText = true;
 
     @Direction
     private int direction = DIRECTION_COUNTERCLOCKWISE;
@@ -166,6 +165,7 @@ public class CircularProgressIndicator extends View {
 
             isAnimationEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_enableProgressAnimation, true);
             isFillBackgroundEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_fillBackground, false);
+            displayText = a.getBoolean(R.styleable.CircularProgressIndicator_displayText, true);
 
             direction = a.getInt(R.styleable.CircularProgressIndicator_direction, DIRECTION_COUNTERCLOCKWISE);
 
@@ -337,7 +337,7 @@ public class CircularProgressIndicator extends View {
         drawProgressBackground(canvas);
         drawProgress(canvas);
         if (shouldDrawDot) drawDot(canvas);
-        drawText(canvas);
+        if (displayText) drawText(canvas);
     }
 
     private void drawProgressBackground(Canvas canvas) {
@@ -644,6 +644,15 @@ public class CircularProgressIndicator extends View {
         this.endAngle = endAngle;
         calculateMaxAngle();
         invalidate();
+    }
+
+    public void setDisplayText(final boolean displayText) {
+        this.displayText = displayText;
+        invalidate();
+    }
+
+    public boolean isDisplayText() {
+        return this.displayText;
     }
 
     @Direction

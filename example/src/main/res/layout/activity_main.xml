@@ -127,6 +127,14 @@
                 android:text="Enable dot" />
 
             <CheckBox
+                android:id="@+id/cb_display_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:checked="true"
+                android:text="Display Text" />
+
+            <CheckBox
                 android:id="@+id/cb_custom_text_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

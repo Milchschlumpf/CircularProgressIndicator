@@ -73,6 +73,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dotColor.setEnabled(isChecked);
             }
         });
+        CheckBox displayTextDot = findViewById(R.id.cb_display_text);
+        displayTextDot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                circularProgress.setDisplayText(isChecked);
+            }
+        });
         CheckBox useCustomTextAdapter = findViewById(R.id.cb_custom_text_adapter);
         useCustomTextAdapter.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
