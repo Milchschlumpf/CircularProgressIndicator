@@ -1,4 +1,4 @@
-package felixpinkerneil.circularprogressindicator;
+package milchschlumpf.circularprogressindicator;
 
 import androidx.annotation.NonNull;
 

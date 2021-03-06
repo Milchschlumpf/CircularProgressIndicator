@@ -1,4 +1,4 @@
-package felixpinkerneil.circularprogressindicatorexample;
+package milchschlumpf.circularprogressindicatorexample;
 
 import android.widget.SeekBar;
 

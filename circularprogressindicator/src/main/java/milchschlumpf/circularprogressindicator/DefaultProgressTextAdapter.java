@@ -1,4 +1,4 @@
-package felixpinkerneil.circularprogressindicator;
+package milchschlumpf.circularprogressindicator;
 
 /**
  * Created by Anton on 06.06.2018.

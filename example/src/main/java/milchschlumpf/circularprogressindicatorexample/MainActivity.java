@@ -1,4 +1,4 @@
-package felixpinkerneil.circularprogressindicatorexample;
+package milchschlumpf.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,8 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import felixpinkerneil.circularprogressindicator.CircularProgressIndicator;
-
+import milchschlumpf.circularprogressindicator.CircularProgressIndicator;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,
         SeekBar.OnSeekBarChangeListener, ColorPickerDialogFragment.OnColorSelectedListener {

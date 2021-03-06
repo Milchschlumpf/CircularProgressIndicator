@@ -42,7 +42,7 @@ Simple but customizable view for displaying progress
 
 Add view to your layout:
 ```xml
-<felixpinkerneil.circularprogressindicator.CircularProgressIndicator
+<milchschlumpf.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/circular_progress"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -70,7 +70,7 @@ Add view to your layout:
 
 Since all attributes have default values, you can specify none of them. Thus following code also works:
 ```xml
-<felixpinkerneil.circularprogressindicator.CircularProgressIndicator
+<milchschlumpf.circularprogressindicator.CircularProgressIndicator
     android:id="@+id/circular_progress"
     android:layout_width="200dp"
     android:layout_height="200dp"

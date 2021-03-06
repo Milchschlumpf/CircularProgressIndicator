@@ -1,4 +1,4 @@
-package felixpinkerneil.circularprogressindicatorexample;
+package milchschlumpf.circularprogressindicatorexample;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
 
 /**
  * Created by Anton on 13.03.2018.
