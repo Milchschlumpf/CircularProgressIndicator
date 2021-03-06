@@ -99,7 +99,7 @@ public class CircularProgressIndicator extends View {
     private ValueAnimator progressAnimator;
 
     @NonNull
-    private ProgressTextAdapter progressTextAdapter;
+    private ProgressTextAdapter progressTextAdapter = new DefaultProgressTextAdapter();
 
     @Nullable
     private OnProgressChangeListener onProgressChangeListener;
@@ -260,6 +260,7 @@ public class CircularProgressIndicator extends View {
             case MeasureSpec.AT_MOST:
                 finalWidth = Math.min(desiredSize, measuredWidth);
                 break;
+            case MeasureSpec.UNSPECIFIED:
             default:
                 finalWidth = desiredSize;
                 break;
@@ -273,6 +274,7 @@ public class CircularProgressIndicator extends View {
             case MeasureSpec.AT_MOST:
                 finalHeight = Math.min(desiredSize, measuredHeight);
                 break;
+            case MeasureSpec.UNSPECIFIED:
             default:
                 finalHeight = desiredSize;
                 break;
@@ -288,11 +290,6 @@ public class CircularProgressIndicator extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         calculateBounds(w, h);
-
-        Shader shader = progressPaint.getShader();
-        if (shader instanceof RadialGradient) {
-            RadialGradient gradient = (RadialGradient) shader;
-        }
     }
 
     private void calculateBounds(int w, int h) {
@@ -503,7 +500,7 @@ public class CircularProgressIndicator extends View {
         Rect textRect = new Rect();
         textPaint.getTextBounds(progressText, 0, progressText.length(), textRect);
 
-        invalidate(textRect);
+        invalidate();
     }
 
     public void setTextSizeSp(@Dimension int size) {
@@ -524,8 +521,7 @@ public class CircularProgressIndicator extends View {
 
         textPaint.setTextSize(size);
 
-        Rect textBounds = calculateTextBounds();
-        invalidate(textBounds);
+        invalidate();
     }
 
     public void setShouldDrawDot(boolean shouldDrawDot) {
