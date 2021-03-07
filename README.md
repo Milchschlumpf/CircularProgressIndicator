@@ -266,7 +266,7 @@ allprojects {
 
 Then add this dependency to your **module-level** `build.gradle` in `dependencies` section:
 ```groovy
-implementation 'com.github.Milchschlumpf:CircularProgressIndicator:1.0.2'
+implementation 'com.github.Milchschlumpf:CircularProgressIndicator:1.0.3'
 ```
 
 ---
