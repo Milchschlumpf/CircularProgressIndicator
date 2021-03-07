@@ -151,6 +151,8 @@ public class CircularProgressIndicator extends View {
             dotColor = a.getColor(R.styleable.CircularProgressIndicator_dotColor, progressColor);
             dotWidth = a.getDimensionPixelSize(R.styleable.CircularProgressIndicator_dotWidth, progressStrokeWidth);
 
+            direction = a.getInt(R.styleable.CircularProgressIndicator_direction, DIRECTION_COUNTERCLOCKWISE);
+
             startAngle = a.getInt(R.styleable.CircularProgressIndicator_startAngle, DEFAULT_PROGRESS_START_ANGLE);
             if (startAngle < 0 || startAngle > 360) {
                 startAngle = DEFAULT_PROGRESS_START_ANGLE;
@@ -166,8 +168,6 @@ public class CircularProgressIndicator extends View {
             isAnimationEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_enableProgressAnimation, true);
             isFillBackgroundEnabled = a.getBoolean(R.styleable.CircularProgressIndicator_fillBackground, false);
             displayText = a.getBoolean(R.styleable.CircularProgressIndicator_displayText, true);
-
-            direction = a.getInt(R.styleable.CircularProgressIndicator_direction, DIRECTION_COUNTERCLOCKWISE);
 
             int cap = a.getInt(R.styleable.CircularProgressIndicator_progressCap, CAP_ROUND);
             progressStrokeCap = (cap == CAP_ROUND) ? Paint.Cap.ROUND : Paint.Cap.BUTT;
@@ -650,6 +650,7 @@ public class CircularProgressIndicator extends View {
 
     public void setStartAngle(@IntRange(from = 0, to = 360) int startAngle) {
         this.startAngle = startAngle;
+        calculateMaxAngle();
         invalidate();
     }
 
