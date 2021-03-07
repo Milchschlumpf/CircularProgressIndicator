@@ -231,7 +231,20 @@ public class CircularProgressIndicator extends View {
     }
 
     private void calculateMaxAngle() {
-        maxAngle = startAngle == endAngle ? ANGLE_END_PROGRESS_BACKGROUND : endAngle - startAngle;
+        if (startAngle == endAngle) {
+            maxAngle = ANGLE_END_PROGRESS_BACKGROUND;
+            return;
+        }
+
+        if (startAngle > endAngle) {
+            maxAngle = ANGLE_END_PROGRESS_BACKGROUND - (startAngle - endAngle);
+        } else {
+            maxAngle = endAngle - startAngle;
+        }
+
+        if (direction == DIRECTION_COUNTERCLOCKWISE) {
+            maxAngle = ANGLE_END_PROGRESS_BACKGROUND - maxAngle;
+        }
     }
 
     @Override
